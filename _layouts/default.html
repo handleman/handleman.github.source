@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="/assets/js/page.js"></script>
+
+</head>
+
+<body>
+<section  role="main" class="container">
+    <div class="row mobile-header hidden-md hidden-lg">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsed-navbar">
+                    <span class="sr-only">Навигация</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Блог.</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="collapsed-navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span>Главная</a></li>
+                    <li><a href="/about.html"><span class="glyphicon glyphicon-envelope"></span>Контакты</a></li>
+                    <!--<li><a href="http://cv.handleman.ru/" ><span class="glyphicon glyphicon-briefcase"></span>CV и портфолио</a></li>-->
+                    <!--<li><a href="#" ><span class="glyphicon glyphicon-bookmark"></span>RSS блога</a></li>-->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8 text-body">
+            <header role="banner" class="main-header hidden-sm hidden-xs"></header>
+            <section role="main" class="content">
+                {{ content }}
+            </section>
+        </div>
+        {% include aside.html %}
+    </div>
+    <div class="row footer-row">
+        <footer role="contentinfo" class="col-md-9 col-lg-9 ">
+            <nav>
+                <a href="/">На главную</a>
+                <a href="/about.html">Контакты</a>
+            </nav>
+            <a href="#" title="В начало страницы" class="to-top-btn"><span class="glyphicon glyphicon-circle-arrow-up">&nbsp;</span></a>
+        </footer>
+
+    </div>
+</section>
+</body>
+</html>

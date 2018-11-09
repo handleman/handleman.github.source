@@ -4,8 +4,6 @@ title:  "Перевод: Подробное руководство по flexbox"
 date:   2015-09-05 13:35:59 +0300
 categories: translation
 ---
-# Перевод: Подробное руководство по flexbox
-
 <p>Простыми словами, flexbox layout (флексбокс) это набор CSS правил описывающий принцип, который помогает разработчику удобно располагать блоки относительно друг друга и эффективнее использовать свободное место между блоками на странице.</p>
 <p>Использование flexbox решает старую наболевшую проблему — центрирование блоков по вертикали при неизвестной высоте как самих блоков, так и подложки под ними.</p>
 <p>Основная идея, стоящая за flexbox, это: способность родительского контейнера менять высоту/ширину (и порядок) своих дочерних элементов, для наиболее эффективного использования доступного пространства (также для того, чтобы подстраиваться под разрешение всех видов устройств и размеров экранов). Короче говоря, родительский флекс-контейнер расширяет внутренние блоки чтобы занять свободное пространство или же сжимает их чтобы избежать наложения их друг на друга.</p>
@@ -15,7 +13,7 @@ categories: translation
 <p>Если обычный метод верстки строится на порядке следования отрисовки страницы, flex использует свой принцип для выстраивания порядка следования дочернихблоков (flex-flow directions).</p>
 <p><strong>Предлагаю взглянуть на изображение из спецификации и разобрать все термины по порядку.</strong></p>
 <h2>Общая схема flexbox layout</h2>
-<p><img style="margin-left: auto; margin-right: auto;" src="images/articles/flexbox/flexbox.png" alt="Общая схема flexbox layout." /></p>
+<p><img style="margin-left: auto; margin-right: auto;" src="/assets/images/articles/flexbox/flexbox.png" alt="Общая схема flexbox layout." /></p>
 <p>В общих чертах, можно сказать, что блоки внутри родительского контейнера будут располагаться по главной оси (main axis) от начала (main-start) до конца оси (main-end) или же по перпендикулярной оси (cross axis) от начала (cross-start) до конца оси (cross-end).</p>
 <h3>Термины на изображении</h3>
 <ul>
@@ -28,12 +26,12 @@ categories: translation
 </ul>
 <p>В итоге нас есть Родительский элемент (flex container), в котором расположены дочерние элементы (flex item) и набор правил для управления выводом этих элементов. Давайте последовательно разберем эти свойства.</p>
 <h2>Свойства родительского элемента (flex container)</h2>
-<p><img class="adaptive-image" src="images/articles/flexbox/flex-container.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/flex-container.png" alt="flex container" /></p>
 <h3>display</h3>
 <p>Это свойство определяет родительский контейнер, так же оно активирует контекст для всех дочерних элементов</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/f453cd276e14126da57e.js"></script>
 <h3>flex-direction</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/flex-direction1.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/flex-direction1.png" alt="flex container" /></p>
 <p>Это свойство определяет главную ось и направление расположения блоков вдоль нее. В общих чертах flexbox располагает блоки либо по горизонтали (row) либо по вертикали (column) вдоль оси.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/2d55e19fc0c9e8eb2d6e.js"></script>
 <ul>
@@ -43,7 +41,7 @@ categories: translation
 <li><strong>column-reverse</strong> - меняет направление для вертикальной оси.</li>
 </ul>
 <h3>flex-wrap</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/flex-wrap.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/flex-wrap.png" alt="flex container" /></p>
 <p>Это свойство определяет порядок переноса элементов. По умолчанию все дочерние элементы стремятся уместиться на одной линии по направлению главной оси.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/9805af0c0c85213d9789.js"></script>
 <ul>
@@ -55,7 +53,7 @@ categories: translation
 <p>Это свойство является сокращением для комбинирования 2х свойств: flex-direction и flex-wrap. Оба этих свойства вместе определяют главную и перпендикулярную ось. По умолчанию используются значения row и nowrap соответсвенно.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/270d1b50730c4204054a.js"></script>
 <h3>justify-content</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/justify-content.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/justify-content.png" alt="flex container" /></p>
 <p>Это свойство определяет расположение блоков вдоль главной оси. Это свойство помогает распределить свободное место оставшееся после рендеринга дочерних элементов. Так же это дает некоторою возможность для разработчика управлять поведением элементов при переполнении родительского контейнера.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/1c3af7d75d2b68c82a45.js"></script>
 <ul>
@@ -66,7 +64,7 @@ categories: translation
 <li><strong>space-around </strong>- распределяет свободное место для всех дочерних элементов равномерно, но с учетом индивидуальных свойств отступов для дочерних элементов.</li>
 </ul>
 <h3>align-items</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/align-items.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/align-items.png" alt="flex container" /></p>
 <p>Это свойство определяет расположение дочерних элементов (flex items) относительно друг друга по перпендикулярной оси. Можно сказать что это свойство такое же как justify-content только для перпендикулярной оси. Чем то напоминает мне свойство vertical-align для inline-block элементов.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/d2e167834e211b29ecfe.js"></script>
 <ul>
@@ -77,7 +75,7 @@ categories: translation
 <li><strong>stretch</strong> - (по умолчанию) элементы вытягиваются вдоль перпендикулярной оси и занимают все пространство родительского блока.</li>
 </ul>
 <h3>align-content</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/align-content.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/align-content.png" alt="flex container" /></p>
 <p>Это свойство выравнивает линии внутри родительского контейнера вдоль перпендикулярной оси (cross-axis на общей схеме), аналогично тому как работает свойство justify-content только не для отдельного элемента а для всей строки (линии) элементов сразу.</p>
 <p>Это свойство не работает если элементы не переносятся на другую строку.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/c21fd9007cd8ba306e95.js"></script>
@@ -90,13 +88,13 @@ categories: translation
 <li><strong>stretch</strong> - линии равномерно расширяются чтобы занять все свободное пространство относительно перпендикулярной оси.</li>
 </ul>
 <h2>Свойства дочерних объектов (flex items)</h2>
-<p><img class="adaptive-image" src="images/articles/flexbox/flex-items.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/flex-items.png" alt="flex container" /></p>
 <h3>order</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/order-2.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/order-2.png" alt="flex container" /></p>
 <p>По умолчанию дочерние объекты расположены в поредяке следования по исходному коду. Это свойство позволяет контролировать порядок отображение объектов относительно друг друга.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/2d51ef66a431361b17b2.js"></script>
 <h3>flex-grow</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/flex-grow.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/flex-grow.png" alt="flex container" /></p>
 <p>Это свойство определяет способность отдельных элементов расширятся при необходимости. Свойство является по сути пропорцией относительно других элементов.</p>
 <p>Если всем элементам задать значение 1 для этого свойства, каждый элемент будет одинаковой ширины, если же одному из этих элементов задать 2, то этот элемент будет в 2 раза шире остальных.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/570b361b19997c6d16ab.js"></script>
@@ -111,7 +109,7 @@ categories: translation
 <script type="text/javascript" src="https://gist.github.com/handleman/b406879ce91dfc1529e4.js"></script>
 <p>Рекомендуется использовать именно это свойство вместо использования отдельных flex-grow, flex-shrink и flex-basis.</p>
 <h3>align-self</h3>
-<p><img class="adaptive-image" src="images/articles/flexbox/align-self.png" alt="flex container" /></p>
+<p><img class="adaptive-image" src="/assets/images/articles/flexbox/align-self.png" alt="flex container" /></p>
 <p>Это свойство позволяет индивидуально выравнивать конкретный выбранный элемент относительно других. Имеет приоритет над общим свойством align-items.</p>
 <script type="text/javascript" src="https://gist.github.com/handleman/6f3d1dd47ea57277d2d4.js"></script>
 <p>Вот собственно и все.</p>

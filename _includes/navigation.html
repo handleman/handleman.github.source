@@ -1,0 +1,26 @@
+<div class="panel-heading">Навигация</div>
+<nav role="navigation">
+    <div class="list-group nav">
+        <div>
+            {% for item in site.data.navigation %}
+            <a href="{{ item.link }}" class="list-group-item {% if page.url == item.link %} active {% endif %}">
+                {{ item.name }}
+            </a>
+            {% endfor %}
+        </div>
+        <!--<div>-->
+        <!--<a href="http://cv.handleman.ru/" class="list-group-item">-->
+        <!--<span class="glyphicon glyphicon-briefcase"></span>-->
+        <!--CV и портфолио-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--<a href="http://feeds.feedburner.com/handleman/JWAT" class="list-group-item">-->
+        <!--<span class="glyphicon glyphicon-bookmark"></span>-->
+        <!--RSS блога-->
+        <!--</a>-->
+        <!--</div>-->
+
+
+    </div>
+</nav>

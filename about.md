@@ -4,8 +4,12 @@ title: Контакты
 permalink: /about/
 ---
 
+# О блоге
+
+Мой личный блог, связанный с веб-разработкой. Где я публикую переводы понравившихся мне тематических статей, делюсь впечатлениями о прочитанных мною комиксах, и делюсь своим опытом.
+
 ## со мной всегда можно связаться :
-Email: **[pavel.handleman@gmail.com](mailto:pavel.handleman@gmail.com)**
+Email: **[{{ site.email }}](mailto:{{ site.email }})**
 
 Skype : **[poul_handleman](skype:pavel.handleman@gmail.com)**
 

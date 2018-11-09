@@ -4,48 +4,112 @@ title:  "Разработка: Таблица группировки шрифт�
 date:   2013-11-29 13:35:59 +0300
 categories: webdev
 ---
-# Разработка: Таблица группировки шрифтов в CSS
-<p><span style="line-height: 1.5em;">По долгу своих рабочих обязанностей мне было нужно устанавливать cms wordpress в отдельную папку в корневую директорию на хостинге множества клиентов. Основная проблема в особенностях отдельного хостинг-провайдера: у каждого свои настройки, свои правила и условия. Задача усложняется еще и тем, что зачастую общение происходит с заказчиком, который не разбирается в тонкостях устройства своего сайта и теряется при разговоре с отделом ведения и получить от него необходимые реквизиты сложно. Хорошо если клиент даст доступ "от FTP", настоятельно требовать от него реквизиты базы данных его сервера не этично, да и не выгодно: Клиент всегда может уйти к другим, которые будут задавать меньше вопросов.</span></p>
-<p>Методом проб и ошибок я выработал для себя несколько простых приемов, а конкретнее - я нашел в каком месте “лежат” параметры подключения к базе у различных популярных cms. В моей копилке знаний присутствуют такие системы как: <strong>Yii PHP Framework, CMS Prestashop,</strong> <strong>Wordpress</strong>, <strong>MODx-CMS</strong>, <strong>Joomla</strong>, <strong>Drupal</strong>, <strong>CMS Made Simple</strong>, <strong>PHPShop</strong>, <strong>Data Life Engine (DLE)</strong>, <strong>Bitrix CMS, Astra.CMS</strong>.</p>
-<p>Если вы забыли или потеряли доступы (логин и пароль) к базе данных mySQL или надо восстановить пароль в админку, то с помощью этих приемов сможешь выцепить необходимую информацию. <br />И так всё по порядку, как говорится от простого к сложному.</p>
-<h3>Yii PHP Framework: 2.0</h3>
-<p>В корневой директории проекта, файл <strong>/.env</strong> , в котором следующие строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/1d5edec1211e86da234f.js"></script>
-<h3>СMS Prestashop 1.6</h3>
-<p>Вам нужен файл: <strong>/config/settings.inc.php</strong>. В котором строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/61c10d6c66f18935cb99.js"></script>
-<h3> Для CMS Wordpress:</h3>
-<p >Тут все просто: в корне сайта лежит файлик " <strong>wp-config.php</strong>". Там ты найдешь следующие строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704066.js"></script>
-<h3>Для CMS Joomla 1.5 - 3:</h3>
-<p >В корне сайта лежит файл " <strong>configuration.php</strong>". Там нас интересуют следующие строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704088.js"></script>
-<h3>Для CMS Drupal:</h3>
-<p >В директории " <strong>/sites/default/</strong>" файл " <strong>settings.php</strong>". В этом файле данные по mysql находятся в формате "connection string", нас интересует следующая строка вида:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704111.js"></script>
-<h3>Для CMS  MODX(Revolutoin) :</h3>
-<p >Доступы к базе находятся в /core/config/config.inc.php, в следующем формате:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/9034780.js"></script>
-<h3>Для CMS  MODX(EVO) :</h3>
-<p >Тут тебе нужен файл " <strong>config.inc.php</strong>" в директории " <strong>/manager/includes/</strong>" , находишь следующие строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704146.js"></script>
-<h3>Доступы для  Bitrix CMS</h3>
-<p >Битрикс хранит свои настройки базы данных в файле " <strong>dbconn.php</strong>" в директории " <strong>/bitrix/php_interface/</strong>". Ищем строки типа:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704166.js"></script>
-<h3>Доступы для Shift CMS</h3>
-<p >Доступы к базе данных прописаны в файле include/config/set.inc.php</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/9034520.js"></script>
-<h3>У CMS Made Simple</h3>
-<p >Прямо в корне сайта лежит файл " <strong>config.php</strong>", в котором тебе будут нужны строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704178.js"></script>
-<h3>Для CMS PHPShop</h3>
-<p >Отредактируй файл связи с базой MySQL " <strong>config.ini</strong>", лежащий в папке " <strong>/phpshop/inc/</strong>”</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704188.js"></script>
-<h3> CMS Data Life Engine (DLE)</h3>
-<p >Тебе нужен файл " <strong>dbconfig.php</strong>" в директории “ <strong>/engine/data/</strong>”. <br />Следующие строки:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704197.js"></script>
-<h3>Astra.CMS</h3>
-<p>В корне сайта лежит файл " <strong>config.php",</strong>в котором, тебе нужна строка:</p>
-<script type="text/javascript" src="https://gist.github.com/handleman/7704213.js"></script>
-<p>Не стоит даже упомниать что в кавычках будут другие данные специфичные для вашего случая, а не “твой текст”. На этом всё. Если кто-нибудь работал с другими CMS и сталкивался с подобной ситуацией, не поленитесь оставить комментарий, и я добавлю его в статью. Надеюсь, был полезен.  </p>
 
+<p>В наше время существует множество шрифтов в различных форматах, годных для встраивания на страницу, причем бесплатно. Существуют специальные хостинги шрифтов, благодаря которым встроить нужный шрифт занимает от силы две-три минуты. Причем сам процесс интеграции такого шрифта, немногим сложнее чем сменить статус в социальной сети.</p>
+<p>Тем не менее даже сейчас<strong> нельзя просто так взять и указать один шрифт для элемента страницы</strong>. Всегда необходимо продумывать связку шрифтов. Причин для этого достаточно много начиная от того, что браузер клиента может не поддерживать форматы веб-шрифтов (хотя, это маловероятно в современном мире) и заканчивая вопросами кросс-браузерного отображения (подмена шрифта отсутствующего в системе аналогичным по начертанию).</p>
+<p>Для того чтобы постоянно не держать в голове сходные шрифты, я пользуюсь специальной таблицей которую нашел несколько лет назад в вебе. Беру на себя труд перевести ее и дополнить своими соображениями специально для вас, читателей моего блога. Ссылочка на оригинал будет в самом конце статьи.</p>
+<div class="clearfix"> </div>
+<table class="table table-striped">
+<tbody>
+<tr><th>Шрифт</th><th>...</th><th>Информация</th></tr>
+<tr>
+<td><img style="height: 39px; width: 140px;" src="/assets/images/articles/fonts_guide/helveticaRegular.png" alt="Helvetica Regular" /></td>
+<td><img src="/assets/images/articles/fonts_guide/mac-logo.png" alt="Macintosh" /></td>
+<td>
+<p>Широко используемый шрифт без засечек, разработанный в 1957 швейцарским проектировщиком шрифта Максом Мидинджером и Эдуардом Хоффманом. Шрифт идет в комплекте шрифтов для Mac OS.</p>
+<p><strong>font-family: Helvetica, 'Helvetica Neue' 'Arial Narrow', sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img style="height: 27px; width: 140px;" src="/assets/images/articles/fonts_guide/helveticaNeueMedium.png" alt="Helvetica Neue " /></td>
+<td><img src="/assets/images/articles/fonts_guide/mac-logo.png" alt="Macintosh" /></td>
+<td>
+<p>Широко используемый на Mac Os и iOS шрифт без засечек, разработанный в 1983 проектировщиком шрифта Вольфгангом Шимпфом и Райнхардом Хаусом. Шрифт идет в комплекте шрифтов для Mac OS.</p>
+<p><strong>font-family: 'Helvetica Neue Medium', Helvetica, 'Arial Narrow', sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/arial.gif" alt="Arial" width="47" height="19" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>На мой взгляд самый популярный шрифт без засечек, прямой конкурент для Helvetica.</p>
+<p><strong>font-family: Arial, Helvetica, sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img style="width: 140px; height: 18px;" src="/assets/images/articles/fonts_guide/arialblack.gif" alt="Arial Black" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>Менее популярен нежели Arial.Не используйте его с font-weight:bold; Этот шрифт сам по себе достаточно жирный!</p>
+<p><strong>font-family: "Arial Black", Arial, sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img style="width: 140px; height: 19px;" src="/assets/images/articles/fonts_guide/comicsans.gif" alt="FontName" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>Для этого шрифта очень сложно подобрать аналог, а главное, нужно ли его использовать вообще...</p>
+<p><strong>font-family: "Comic Sans MS", cursive;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/courier.gif" alt="Courier (Mac scalable)" width="101" height="17" /> <br /> <img style="width: 81px; height: 13px;" src="/assets/images/articles/fonts_guide/couriernew.png" alt="Courier New" /></td>
+<td><img src="/assets/images/articles/fonts_guide/mac-logo.png" alt="Macintosh" /> <br /> <img src="/assets/images/articles/fonts_guide/ms-logo.png" alt="Windows" width="38" height="30" align="middle" /></td>
+<td>
+<p>Шрифт, имитирующий стиль печатной машинки. В наше время полностью устарел и встречается редко. Рекомендуется использовать «Courier New».</p>
+<p><strong>font-family: "Courier New", Courier, monospace;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/geneva.gif" alt="Geneva" width="83" height="20" /></td>
+<td><img src="/assets/images/articles/fonts_guide/mac-logo.png" alt="Macintosh" /></td>
+<td>
+<p>Древний шрифт, предок Helvetica. Интересен в качестве музейного экспоната.</p>
+<p><strong>font-family: Geneva, "MS Sans Serif", sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/georgia.gif" alt="Georgia" width="82" height="24" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>Шрифт с засечками. Разработан в Microsoft для использования в интернете. Рассчитан на четкое и читаемое отображение в малом размере. Очень похож на Times New Roman.</p>
+<p><strong>font-family: Georgia, Times New Roman, serif;</strong></p>
+</td>
+</tr>
+<tr><!-- MS SANS SERIF -->
+<td><img style="width: 140px; height: 16px;" src="/assets/images/articles/fonts_guide/mssansserif.gif" alt="MS Sans Serif" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ms-logo.png" alt="Windows" width="38" height="30" align="middle" /></td>
+<td>
+<p>Системный шрифт MS Windows, использовался для диалоговых окон, системных сообщений и т. д.</p>
+<p><strong>font-family: "MS Sans Serif", Geneva, sans-serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/terminal9.gif" alt="Terminal (9 pt.)" width="63" height="9" /> <br /> <img src="/assets/images/articles/fonts_guide/terminal12.gif" alt="Terminal (12 pt.)" width="91" height="14" /> <br /> <img src="/assets/images/articles/fonts_guide/terminal14.gif" alt="Terminal (14 pt.)" width="77" height="14" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ms-logo.png" alt="Windows" width="38" height="30" align="middle" /></td>
+<td>
+<p>Немасштабируемый, моноширинный системный шрифт DOS или интерфейса командной строки.</p>
+<p><strong>font-family: Terminal, monospace;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img style="width: 140px; height: 15px;" src="/assets/images/articles/fonts_guide/timesnewroman.gif" alt="Times New Roman" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>Это — безусловно наиболее распространенный шрифт в Сети. Являлся шрифтом по умолчанию в большинстве браузеров.</p>
+<p><strong>font-family: "Times New Roman", Times, serif;</strong></p>
+</td>
+</tr>
+<tr>
+<td><img src="/assets/images/articles/fonts_guide/verdana.gif" alt="Verdana" width="97" height="20" /></td>
+<td><img src="/assets/images/articles/fonts_guide/ie-logo.png" alt="MS Internet Explorer" /></td>
+<td>
+<p>Возможно, самый удобочитаемый из шрифтов без засечек, разработанный в Microsoft для использования на экране. Однако, Verdana не должен использоваться бок о бок со схожими шрифтами того же размера, потому что Verdana зрительно кажется больше по размеру.</p>
+<p><strong>font-family: Verdana, Arial, Helvetica, sans-serif;</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Текст переведен, доработан и подчищен от устаревшей информации, Оригинал находится <a href="http://www.angelfire.com/al4/rcollins/style/fonts.html" target="_blank">тут</a></p>
+<p>Желаю удачи во всех начинаниях.</p>
+<p class="postovoy">Советую <a href="http://com.uanic.name/" target="_blank">Надежный хостинг и регистратор доменных имен</a></p>
