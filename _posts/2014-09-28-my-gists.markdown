@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "Разработка: Подборка полезных функций javascript"
+date:   2014-10-26 13:35:59 +0300
+categories: webdev
+---
+# Разработка: Подборка полезных функций javascript
+<p>За последний год у меня накопилось достаточно много интересных решений различных микрозадач веб-разработки. Все интересные решения и приемы, которые я нахожу в сети или «изобретаю» сам, я храню на gist.github.com. Я решил что будет полезно сделать краткий обзор собственных «гистов» как, собственно, для консолидации своих знаний ,так и для того, чтобы вам не пришлось изобретать велосипеды. Итак по порядку…</p>
+<h2>1. Javascript: Реакция на изменение ширины браузера</h2>
+<p>Кроссбраузерный способ обработки события изменения окна браузера. Использую для перетасовки блоков верстки, как элемент адаптивного дизайна.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/8135376.js"></script>
+<h2>2. Javascript: iOS, or not iOS: that is the question… (Определить iOS)</h2>
+<p>Простой и быстрый способ узнать зашел ли к вам на сайт человек с iPad или iPhone.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/8254820.js"></script>
+<h2>3. Javascript: Определить платформу мобильного устройства пользователя.</h2>
+<p>Простой и легкий способ определить с какого смартфона к вам на сайт зашел пользователь, узнать тип операционной системы <span style="line-height: 1.5em;">посетителя сайта.</span></p>
+<script type="text/javascript" src="https://gist.github.com/handleman/8956416.js"></script>
+<h2>4. Javascript, HTML: специальные символы валют.</h2>
+<p>HTML спецсимволы валют различных стран мира.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/9346600.js"></script>
+<h2>5. Javascript, JQuery: Скролл окна к элементу на странице</h2>
+<p>Кроссбраузерный способ реализации кнопки “На верх”, для вашего сайта.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/9464486.js"></script>
+<h2>6. Git: .gitignore файл для проектов на MODx Revo</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/9856498.js"></script>
+<h2>7. Javascript, JQuery: как получить значение inline свойства style элемента.</h2>
+<p>Способ узнать css свойство динамически генерированного объекта, все свойства которого зашиты в атрибут style, прямо в самом теге.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/349f363bfc90963eb317.js"></script>
+<h2>8. Javascript: Структура ( скелет) модуля на javascript</h2>
+<p>Способ реализации модульной архитектуры вашего веб приложения.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/11c69551298290365a8c.js"></script>
+<h2>9. Javascript, JQuery: как перезагрузить iframe на странице</h2>
+<p>Несколько способов программно перезагрузить содержимое iframe контейнера на странице.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/6289dfc666cc13ee3800.js"></script>
+<h2>10. CSS: Пример адекватной тени под блоком и текстом</h2>
+<p>Тень в меру размашистая, идеально полупрозрачная.</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/231c48b2e702a3e20743.js"></script>
+<h2>11. JavaScript: Конвертация данных формы в javascrpt объект</h2>
+<p>Сначала форма проходит сериализацию, затем сформированная строка запроса конвертируется в js объект</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/018cb4f312780c7b1e0d.js"></script>
+<h2>12. JavaScript: Спрятать элемент, если пользователь кликнул мышью ввне его области</h2>
+<p>Например нам нужно прятать модальное окно, после того как пользователь щелкнул вне этого окна. ПРи этом, если клик по области внутри окна, то все оставить как есть</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/7230f0fbf96b5fdeea18.js"></script>
+<h2>13. Jquery. 2-й способ реализации принципа - скрыть элемент по клику на внешней области</h2>
+<p>Этот способ значительно короче, но менее гибкий нежели предыдущий</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/3e81400f21bc24ccd370.js"></script>
+<h2>14. CSS: плавная анимация элемента при наведении средствами css</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/1953221118688ceb840f.js"></script>
+<h2>15. Задать классы элементам управления google maps</h2>
+<p>Элементы управления на карте по умолчанию не поддаются стилизации, потому как не содержат уникальных классов либо идентификаторов. Данный хак распознает эти элементы и "именует" их, для того, чтобы разработчик смог в дальнейшем управлять их отображением через css файлы</p>
+<script type="text/javascript" src="https://gist.github.com/handleman/491a92fbd9999539e3ac.js"></script>
+<h2>16. CSS:Получить значение CSS свойства без величины 'px'</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/62ab3264c6b2e3253e77.js"></script>
+<h2>17. JavaScript: Что делать если input вызывает действие click 2 раза</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/9e94486833a922bc6710.js"></script>
+<h2>18. JavaScript: Получить длину объекта, аналог Array.length</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/f8666fc1580cbb91c00f.js"></script>
+<h2>19. JavaScript: Переименовать свойство объекта</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/a2e16a704061d44201ac.js"></script>
+<h2>20. LESS: Быстрый способ задания фона html елемента</h2>
+<script type="text/javascript" src="https://gist.github.com/handleman/1688df8383e3925f7400.js"></script>
+
