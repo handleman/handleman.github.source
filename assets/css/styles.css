@@ -96,7 +96,7 @@
   }
 }
 body {
-  background: #708090 url(../images/warmpattern.png) repeat;
+  background: #708090 url(../images/warmpattern.jpg) repeat;
 }
 .logo {
   display: block;
@@ -117,6 +117,7 @@ body {
   float: right;
   margin-left: 1em;
   margin-bottom: 1em;
+  max-height: 160px;
 }
 .text-body {
   -webkit-box-sizing: border-box;
