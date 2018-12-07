@@ -22,6 +22,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://handleman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PHandleman
 github_username:  handleman
+paginate: 5
+
 
 # Build settings
 markdown: kramdown
@@ -29,6 +31,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
