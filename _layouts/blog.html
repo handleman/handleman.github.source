@@ -16,19 +16,14 @@ title: Blog
 </article>
 {% endfor %}
 <div class="pagination">
+
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      Назад
-    </a>
-  {% else %}
-    <span class="previous">Назад</span>
+    <a href="{{ paginator.previous_page_path }}" class="previous"><---&nbsp;</a>
   {% endif %}
   <span class="page_number ">
-    Страница: {{ paginator.page }} из {{ paginator.total_pages }}
+   <span>Страница </span> {{ paginator.page }} из {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Вперед</a>
-  {% else %}
-    <span class="next ">Вперед</span>
+    <a href="{{ paginator.next_page_path }}" class="next">&nbsp;---></a>
   {% endif %}
 </div>

@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://handleman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PHandleman
 github_username:  handleman
-paginate: 5
+paginate: 4
 
 
 # Build settings
