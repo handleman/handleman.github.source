@@ -23,7 +23,7 @@ url: "https://handleman.github.io" # the base hostname & protocol for your site,
 twitter_username: PHandleman
 github_username:  handleman
 paginate: 4
-
+lang: ru_RU
 
 # Build settings
 markdown: kramdown
