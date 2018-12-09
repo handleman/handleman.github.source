@@ -10,36 +10,36 @@ categories: webdev
 Делюсь набором полезных сниппетов кода, накопившихся у меня в процессе работы с прошлой статьи.
 На этот раз тут есть все - от bash команд до css: общая черта только то что они так или иначе связаны с веб- разработкой, и у свое время сильно мне помогли.
 
-Bash/unix: Как убить процесс занимающий определенный порт.
+####Bash/unix: Как убить процесс занимающий определенный порт.
 <script src="https://gist.github.com/handleman/e070241c817ac9e244d3a673cae98c31.js"></script>
 
-Javascript: Как запустить несколько NPM команд из package.json.
+####Javascript: Как запустить несколько NPM команд из package.json.
 <script src="https://gist.github.com/handleman/9cb2f527c4efa82722cc77ecbe7bfa04.js"></script>
 
-Bash/Unix: Вариант удобного (цветной bash) формата для команды git log.
+####Bash/Unix: Вариант удобного (цветной bash) формата для команды git log.
 <script src="https://gist.github.com/handleman/ac2c3e7084e09c8da82c8e0824251a6c.js"></script>
 
-Javascript: Как определить пустой объект. ({})
+####Javascript: Как определить пустой объект. ({})
 <script src="https://gist.github.com/handleman/4bf5d36a648d4db41b391f2bc424f52b.js"></script>
 
-Javascript: Как узнать высоту динамического DOM элемента.
+####Javascript: Как узнать высоту динамического DOM элемента.
 <script src="https://gist.github.com/handleman/97d9866134fa8aae6e7f11dbbb5f13d8.js"></script>
 
-Javascript: Как получить значение свойств вложенного объекта, любого уровня вложенности.
+####Javascript: Как получить значение свойств вложенного объекта, любого уровня вложенности.
 <script src="https://gist.github.com/handleman/8deb5ceaa362e7866bbec4240f34fe50.js"></script>
 
-Css: Стилизация формы в (как) material design.
+####Css: Стилизация формы в (как) material design.
 <script src="https://gist.github.com/handleman/148c6f57d008fb427084cefe85d72cc3.js"></script>
 
-Javascript: Как получить завтрашнюю дату в javascript.
+####Javascript: Как получить завтрашнюю дату в javascript.
 <script src="https://gist.github.com/handleman/27d0c9242ea6468706dabcbd243b2a76.js"></script>
 
-Javascript: Как определить ie 11 на фронте (в браузере).
+####Javascript: Как определить ie 11 на фронте (в браузере).
 <script src="https://gist.github.com/handleman/64dbe44219f1b9837fe8a9103aec0fd9.js"></script>
 
-Javascript: Как заставить браузер  выполнить «Сохранить как файл» вместо того чтобы открыть его 
+####Javascript: Как заставить браузер  выполнить «Сохранить как файл» вместо того чтобы открыть его 
 <script src="https://gist.github.com/handleman/6ac609c084c735e6738f5d155e29a874.js"></script>
 
-Javascript: Скруглить углы у бар-чарта в c3.js
+####Javascript: Скруглить углы у бар-чарта в c3.js
 <script src="https://gist.github.com/handleman/6ea17874d5ac98e46477a34cad57986d.js"></script>
 
