@@ -39,58 +39,46 @@
     {% seo %}
     <meta name="description" content="{{ site.description }}">
     <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="/assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
 
 <body>
-<section  role="main" class="container">
-    <div class="row mobile-header hidden-md hidden-lg">
-        <nav class="navbar navbar-default" role="navigation">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsed-navbar">
-                    <span class="sr-only">Навигация</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Блог.</a>
+<div class="container" id="container" >
+    <div class="site-content">
+        <div class="aside">
+            <div class="logo-container">
+                <a href="/" class="logo animated" title="На главную">На главную</a>
             </div>
+            {% if page.navigation != false %}
+                <nav>
+                    <ul role="menu" class="nav">
+                        {% include navigation.html %}
 
-            <div class="collapse navbar-collapse" id="collapsed-navbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span>Главная</a></li>
-                    <li><a href="/about.html"><span class="glyphicon glyphicon-envelope"></span>Контакты</a></li>
-                    <!--<li><a href="http://cv.handleman.ru/" ><span class="glyphicon glyphicon-briefcase"></span>CV и портфолио</a></li>-->
-                    <!--<li><a href="#" ><span class="glyphicon glyphicon-bookmark"></span>RSS блога</a></li>-->
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </div>
-    <div class="row">
-
-        <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8 text-body">
-            <header role="banner" class="main-header hidden-sm hidden-xs"></header>
-            <section role="main" class="content">
-                {{ content }}
-            </section>
+                    </ul>
+                </nav>
+            {% endif %}
+            {% if page.aside  %}
+                <aside>
+                    {% include aside.html %}
+                </aside>
+            {% endif %}
         </div>
-        {% include aside.html %}
-    </div>
-    <div class="row footer-row">
-        <footer role="contentinfo" class="col-md-9 col-lg-9 ">
+        <main class="content">
+            {{ content }}
+        </main>
+        <footer class="footer">
             <nav>
-                <a href="/">На главную</a>
-                <a href="/about.html">Контакты</a>
+                <ul role="menu" class="nav">
+                    <a href="/"  title="На главную">На главную</a>
+                {% include navigation.html %}
+                </ul>
             </nav>
-            <a href="#" title="В начало страницы" class="to-top-btn"><span class="glyphicon glyphicon-circle-arrow-up">&nbsp;</span></a>
+            <button class="scroll-top" type="button" onclick="window.scrollTop();"> <span class="icon"></span></button>
         </footer>
 
     </div>
-</section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/assets/js/jquery.scrollTo.min.js"></script>
+</div>
+
 <script src="/assets/js/page.js"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5304a714568001ec"></script>
 </body>

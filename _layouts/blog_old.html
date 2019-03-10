@@ -3,15 +3,15 @@ layout: default
 title: Blog
 ---
 {% for post in paginator.posts %}
-<article class="annotation">
-    <a href="{{ post.url }}" ><h2>{{ post.title }}</h2></a>
-    <img src="{{ post.image }}" class="description-img img-thumbnail">
+<article>
+    <a href="{{ post.url }}" class="header-link"><h2>{{ post.title }}</h2></a>
+    <img src="{{ post.image }}" class="description-img img-responsive img-thumbnail">
     <section class="description">
         <p>{{ post.description }}</p>
     </section>
     <div style="clear: both;"></div>
     <a href="{{ post.url }}" class="more">Подробнее</a>
-    <section class="info "><small>Опубликовано <strong>{{ post.date | date_to_string }}</strong> </small></section>
+    <section class="post-info pull-right text-muted"><small>Опубликовано <strong>{{ post.date | date_to_string }}</strong> </small></section>
     <div class="clearfix"></div>
 </article>
 {% endfor %}
