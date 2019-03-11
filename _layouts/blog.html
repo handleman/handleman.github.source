@@ -24,6 +24,6 @@ title: Blog
    <span>Страница </span> {{ paginator.page }} из {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">&nbsp;---></a>
+    <a href="{{ paginator.next_page_path }}" class="arrow"> <span class="next ">следующая страница</span></a>
   {% endif %}
 </div>

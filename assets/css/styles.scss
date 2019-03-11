@@ -220,4 +220,44 @@ a{
 }
 .pagination{
   color: darken($divide-color, 20%);
+  .arrow{
+    display: inline-block;
+    height: 20px;
+    transition: background-color .3s;
+    padding: 3px 1em 3px 2em;
+    border-radius: 3px;
+    position: relative;
+    vertical-align: bottom;
+    &:hover{
+      background-color: transparentize($divide-color, .9);
+    }
+  }
+  .next{
+    color: $accent-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: .8em;
+    margin-top: 13px;
+    width: 26px;
+    height: 1px;
+    background-color: currentColor;
+    text-indent: -9999px;
+    @extend .link-like;
+    text-decoration: none;
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 1px;
+      top: -5px;
+      width: 10px;
+      height: 10px;
+      border-top: solid 1px currentColor;
+      border-right: solid 1px currentColor;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
 }
