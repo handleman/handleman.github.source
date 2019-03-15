@@ -2,7 +2,6 @@
 layout: page
 title: Контакты
 permalink: /about/
-navigation: false
 ---
 
 # О блоге

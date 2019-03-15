@@ -1,6 +1,7 @@
 ---
 ---
-$accent-color:#1DAFD4;
+$accent-color: #198BCD;
+$extra-color: #fdff89;
 $divide-color: #bebebe;
 
 html, body{
@@ -18,7 +19,7 @@ body {
 .headings{
   margin-top: .8em;
   margin-bottom: 1em;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 h1{
@@ -29,7 +30,6 @@ h1{
 h2{
   @extend .headings;
   font-size: 1.5em;
-  line-height: 1.5em;
 }
 
 h3{
@@ -86,7 +86,8 @@ ul.nav{
   grid-area:content;
 }
 .article{
-  position: relative;
+  box-sizing: border-box;
+  max-width: 805px;
   img{
     display: inline-block;
     max-width: 100%;
@@ -113,6 +114,9 @@ ul.nav{
     border-radius: 4px;
     white-space: pre-wrap;
 
+  }
+  .gist{
+    box-sizing: border-box;
   }
 }
 
@@ -164,10 +168,11 @@ ul.nav{
 .logo{
   display: block;
   text-indent: -9999px;
-  width: 168px;
-  height: 169px;
+  width: 200px;
+  height: 200px;
   background: url(../images/logo.png) 0 0 no-repeat;
   margin: 2em auto;
+  background-size: contain;
   &:hover {
     -webkit-animation-name: shake;
     -moz-animation-name: shake;
@@ -223,7 +228,9 @@ a{
   margin-bottom: 2em;
   padding: .7em;
   border-radius:2px;
-  transition: background-color .3s;
+  transition: all .3s;
+  box-sizing: border-box;
+  border: 1px solid transparent;
   h2{
     margin-bottom: .5em;
   }
@@ -244,7 +251,8 @@ a{
     float: right;
   }
   &:hover{
-    background-color: transparentize($divide-color, .9);
+    border: solid 1px lighten($divide-color, 10%) ;
+    border-radius: 4px;
 
   }
 }
@@ -305,5 +313,23 @@ a{
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
     }
+  }
+}
+.post-content{
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 7px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: .9;
+    margin-left: -1.8em;
+    background: lighten($accent-color, 10%);
+    background: -moz-linear-gradient(top, lighten($accent-color, 10%) 0%, $extra-color 100%);
+    background: -webkit-linear-gradient(top, lighten($accent-color, 10%) 0%,$extra-color 100%);
+    background: linear-gradient(to bottom, lighten($accent-color, 10%) 0%,$extra-color 100%);
+
   }
 }
