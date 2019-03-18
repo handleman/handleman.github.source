@@ -2,7 +2,7 @@
 {% for item in site.data.navigation %}
 <li>
     {% if page.dir != item.link %}
-        <a href="{{ item.link }}" role="menuitem" class="list-group-item {% if page.url == item.link %} active {% endif %}">
+        <a href="{{ item.link }}" role="menuitem" class=" {% if page.url == item.link %} active {% endif %}">
             {{ item.name }}
         </a>
     {% endif %}
