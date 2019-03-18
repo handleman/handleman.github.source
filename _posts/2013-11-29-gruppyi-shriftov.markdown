@@ -114,4 +114,3 @@ categories: webdev
 </table>
 <p>Текст переведен, доработан и подчищен от устаревшей информации, Оригинал находится <a href="http://www.angelfire.com/al4/rcollins/style/fonts.html" target="_blank">тут</a></p>
 <p>Желаю удачи во всех начинаниях.</p>
-<p class="postovoy">Советую <a href="http://com.uanic.name/" target="_blank">Надежный хостинг и регистратор доменных имен</a></p>

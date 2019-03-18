@@ -39,6 +39,7 @@
     {% seo %}
     <meta name="description" content="{{ site.description }}">
     <meta name="theme-color" content="#198BCD">
+
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
@@ -53,12 +54,8 @@
             <nav>
                 <ul role="menu" class="nav">
                     {% include navigation.html %}
-
                 </ul>
             </nav>
-            <aside>
-                {% include aside.html %}
-            </aside>
         </div>
         <main class="content">
             {{ content }}

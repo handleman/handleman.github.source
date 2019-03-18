@@ -1,12 +1,10 @@
-<!--<div class="panel-heading">Навигация</div>-->
-<nav role="navigation">
-    <div class="list-group nav">
-        <div>
-            {% for item in site.data.navigation %}
-            <a href="{{ item.link }}" class="list-group-item {% if page.url == item.link %} active {% endif %}">
-                {{ item.name }}
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</nav>
+
+{% for item in site.data.navigation %}
+<li>
+    {% if page.dir != item.link %}
+        <a href="{{ item.link }}" class="list-group-item {% if page.url == item.link %} active {% endif %}">
+            {{ item.name }}
+        </a>
+    {% endif %}
+</li>
+{% endfor %}
