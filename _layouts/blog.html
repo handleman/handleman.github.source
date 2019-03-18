@@ -20,12 +20,12 @@ aside: true
 <div class="pagination">
 
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous"><---&nbsp;</a>
+    <a href="{{ paginator.previous_page_path }}" class="arrow"><span class="previous">предыдущая страница</span></a>
   {% endif %}
   <span class="page_number ">
    <span>Страница </span> {{ paginator.page }} из {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="arrow"> <span class="next ">следующая страница</span></a>
+    <a href="{{ paginator.next_page_path }}" class="arrow"><span class="next">следующая страница</span></a>
   {% endif %}
 </div>

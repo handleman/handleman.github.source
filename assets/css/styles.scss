@@ -325,6 +325,33 @@ a{
       transform: rotate(45deg);
     }
   }
+  .previous{
+    color: $accent-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: .8em;
+    margin-top: 13px;
+    width: 26px;
+    height: 1px;
+    background-color: currentColor;
+    text-indent: -9999px;
+    @extend .link-like;
+    text-decoration: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: -5px;
+      width: 10px;
+      height: 10px;
+      border-top: solid 1px currentColor;
+      border-right: solid 1px currentColor;
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+  }
 }
 .post-content{
   position: relative;
