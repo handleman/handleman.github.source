@@ -4,6 +4,9 @@ $accent-color: #198BCD;
 $extra-color: #fdff89;
 $divide-color: #bebebe;
 $font-color: #172a3b;
+$mobile-screen: 760px;
+$tablet-screen: 1100px;
+
 
 
 html, body{
@@ -18,6 +21,12 @@ body {
   font-size: 18px;
   color: $font-color;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+@media screen and (max-width: $mobile-screen) {
+  body{
+    font-size: 14px;
+
+  }
 }
 hr{
   display: block;
@@ -66,9 +75,9 @@ ul.nav{
 
 .site-content{
   display: grid;
-  max-width: 1100px;
+  max-width: $tablet-screen;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 80px auto 120px;
+  grid-template-rows: 40px auto 120px;
   grid-template-areas:
           ". ."
           "content aside"
@@ -77,6 +86,19 @@ ul.nav{
   grid-gap: 1em 1.5em;
 
 }
+@media screen and (max-width: $mobile-screen) {
+  .site-content{
+    grid-template-columns:1fr;
+    grid-template-rows: 2em auto 3em;
+    grid-template-areas:
+            "aside"
+            "content"
+            "footer";
+    grid-gap: 1em ;
+
+  }
+}
+
 
 .aside{
   grid-area: aside;
@@ -93,9 +115,38 @@ ul.nav{
     }
   }
 }
+@media screen and (max-width: $mobile-screen) {
+  .aside{
+    display: flex;
+    padding-left: 1em;
+    padding-top: .5em;
+    align-content: center;
+
+
+    ul.nav{
+      padding-top: .5em;
+      padding-left: 2em;
+      li{
+        display: inline-block;
+      }
+      a{
+        font-size: 1em;
+      }
+    }
+  }
+
+}
 .content{
   grid-area:content;
 }
+@media screen and (max-width: $mobile-screen) {
+  .content{
+    padding-left: .5em;
+    padding-right: .5em;
+    overflow: auto;
+  }
+}
+
 .article{
   box-sizing: border-box;
   max-width: 805px;
@@ -130,6 +181,17 @@ ul.nav{
     box-sizing: border-box;
   }
 }
+@media screen and (max-width: $mobile-screen) {
+  .article{
+    .gist{
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow: scroll;
+    }
+  }
+
+}
+
 
 .footer{
   grid-area:footer;
@@ -175,6 +237,19 @@ ul.nav{
   }
 
 }
+@media screen and (max-width: $mobile-screen) {
+  .footer{
+    padding-bottom: 1em;
+    padding-left: 1em;
+    .scroll-top{
+      .icon{
+        margin-top: -1em;
+      }
+    }
+  }
+
+}
+
 
 .logo{
   display: block;
@@ -185,10 +260,17 @@ ul.nav{
   margin: 2em auto;
   background-size: contain;
   &:hover {
-    -webkit-animation-name: shake;
-    -moz-animation-name: shake;
-    -o-animation-name: shake;
     animation-name: shake;
+  }
+}
+@media screen and (max-width: $mobile-screen) {
+  .logo{
+    width: 3em;
+    height: 3em;
+    margin: 0;
+    &:hover {
+      animation-name: none;
+    }
   }
 }
 
@@ -267,6 +349,20 @@ a{
     float: right;
   }
 }
+@media screen and (max-width: $mobile-screen) {
+  .annotation {
+    &> a{
+      display: block;
+    }
+    .description-img {
+      display: block;
+      margin-bottom: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+  }
+}
 .img-thumbnail {
   padding: 4px;
   line-height: 1.428571429;
@@ -277,7 +373,9 @@ a{
   display: inline-block;
   max-width: 100%;
   height: auto;
+
 }
+
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -373,4 +471,10 @@ a{
 }
 .post-comments{
   margin-top: 2em;
+}
+@media screen and (max-width: $mobile-screen){
+
+  .tweet-panel{
+    display: none;
+  }
 }
