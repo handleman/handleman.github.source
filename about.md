@@ -19,7 +19,7 @@ Twitter: **[https://twitter.com/PHandleman](https://twitter.com/PHandleman)**
 
 Facebook: **[https://www.facebook.com/pavel.shiskin](https://www.facebook.com/pavel.shiskin)**
 
-[LinkedIn](www.linkedin.com/in/poul-hendelman-055b757a)
+[LinkedIn](https://www.linkedin.com/in/poul-hendelman-055b757a)
 
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
