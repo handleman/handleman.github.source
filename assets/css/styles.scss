@@ -138,6 +138,12 @@ ul.nav{
 }
 .content{
   grid-area:content;
+  .comic_page{
+    display: block; 
+    width: 100%; 
+    height: auto; 
+    margin-bottom: 2em;
+  }
 }
 @media screen and (max-width: $mobile-screen) {
   .content{
