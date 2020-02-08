@@ -1,0 +1,27 @@
+{
+    "name": "handleman.github.source",
+    "version": "1.0.0",
+    "description": "personal blog",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/handleman/handleman.github.source.git"
+    },
+    "author": "pavel.handleman@gmail,com",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/handleman/handleman.github.source/issues"
+    },
+    "homepage": "https://github.com/handleman/handleman.github.source#readme",
+    "devDependencies": {
+        "husky": "^4.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "post-commit": "bundle exec jekyll build && cd _site && git remote add origin git@github.com:handleman/handleman.github.io.git && git add . && git commit -am \"update\" && git push"
+        }
+    }
+}
