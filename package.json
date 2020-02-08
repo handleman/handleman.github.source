@@ -21,7 +21,9 @@
     },
     "husky": {
         "hooks": {
-            "post-commit": "bundle exec jekyll build && cd _site && git remote add origin git@github.com:handleman/handleman.github.io.git && git add . && git commit -am \"update\" && git push"
+            "post-commit": "bundle exec jekyll build && cd _site",
+            "post-commit": "git remote add origin git@github.com:handleman/handleman.github.io.git",
+            "post-commit": "git add . && git commit -am \"update\" && git push origin"
         }
     }
 }
