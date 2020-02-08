@@ -21,11 +21,7 @@
     },
     "husky": {
         "hooks": {
-<<<<<<< HEAD
             "post-update": "rm -Rf _site && git clone git@github.com:handleman/handleman.github.io.git _site && bundle exec jekyll build && cd _site &&  git add . && git pull origin master && git commit -am \"update\" && git push origin"
-=======
-            "post-commit": "rm -Rf _site && bundle exec jekyll build && cd _site && git init && git remote add origin git@github.com:handleman/handleman.github.io.git && git pull origin &&  git add . && git commit -am \"update\" && git push --set-upstream origin master"
->>>>>>> 537564a7bf6bf7e80e7a58affd3743c042aff3b5
         }
     }
 }
