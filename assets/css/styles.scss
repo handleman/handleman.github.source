@@ -176,6 +176,11 @@ ul.nav {
         box-sizing: border-box;
     }
 }
+@media screen and (min-width: $mobile-screen) {
+    .article {
+        padding-left: 1em;
+    }
+}
 @media screen and (max-width: $mobile-screen) {
     .article {
         .gist {
