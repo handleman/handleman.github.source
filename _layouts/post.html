@@ -9,7 +9,7 @@ aside: true
     <section class="post-content">
         {{content}}
     </section>
-    <section class="post-info text-muted"><small>Опубликовано <strong>{{ page.date | date_to_string }}</strong> </small></section>
+    <section class="post-info text-muted"><small><strong>Опубликовано : {{ page.date | date_to_string }}</strong> </small></section>
 </article>
 <hr />
 {% include comments.html %}
