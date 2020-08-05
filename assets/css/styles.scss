@@ -12,6 +12,7 @@ html,
 body {
     margin: 0;
 }
+
 html {
     height: 100%;
 }
@@ -23,11 +24,13 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
         Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
+
 @media screen and (max-width: $mobile-screen) {
     body {
-        font-size: 14px;
+        font-size: 1rem;
     }
 }
+
 hr {
     display: block;
     border: 0;
@@ -36,6 +39,7 @@ hr {
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
+
 .headings {
     margin-top: 0.8em;
     margin-bottom: 1em;
@@ -46,6 +50,7 @@ h1 {
     @extend .headings;
     font-size: 2.1em;
 }
+
 h2 {
     @extend .headings;
     font-size: 1.5em;
@@ -59,12 +64,14 @@ h3 {
 p {
     line-height: 1.5;
 }
+
 ul.nav {
     display: block;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .container {
     height: auto;
     display: grid;
@@ -83,6 +90,7 @@ ul.nav {
     align-content: stretch;
     grid-gap: 1em 1.5em;
 }
+
 @media screen and (max-width: $mobile-screen) {
     .site-content {
         grid-template-columns: 1fr;
@@ -97,19 +105,23 @@ ul.nav {
 
 .aside {
     grid-area: aside;
+
     .panel {
         margin-top: 3em;
     }
+
     ul.nav {
         li {
             display: block;
             text-align: center;
         }
+
         a {
             font-size: 1.25em;
         }
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .aside {
         display: flex;
@@ -120,17 +132,21 @@ ul.nav {
         ul.nav {
             padding-top: 0.5em;
             padding-left: 2em;
+
             li {
                 display: inline-block;
             }
+
             a {
                 font-size: 1em;
             }
         }
     }
 }
+
 .content {
     grid-area: content;
+
     .comic_page {
         display: block;
         width: 100%;
@@ -138,6 +154,7 @@ ul.nav {
         margin-bottom: 2em;
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .content {
         padding-left: 0.5em;
@@ -149,10 +166,12 @@ ul.nav {
 .article {
     box-sizing: border-box;
     max-width: 805px;
+
     img {
         display: inline-block;
         max-width: 100%;
     }
+
     pre {
         display: block;
         padding: 0.6em;
@@ -164,6 +183,7 @@ ul.nav {
         border-radius: 4px;
         white-space: pre-wrap;
     }
+
     code.highlighter-rouge {
         padding: 2px 4px;
         font-size: 90%;
@@ -172,15 +192,18 @@ ul.nav {
         border-radius: 4px;
         white-space: pre-wrap;
     }
+
     .gist {
         box-sizing: border-box;
     }
 }
+
 @media screen and (min-width: $mobile-screen) {
     .article {
         padding-left: 1em;
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .article {
         .gist {
@@ -197,12 +220,14 @@ ul.nav {
     align-items: center;
     justify-content: space-between;
     padding-top: 1em;
+
     ul.nav {
         li {
             display: inline-block;
             margin-left: 1em;
         }
     }
+
     .scroll-top {
         font-size: 1em;
         margin-right: 2em;
@@ -211,6 +236,7 @@ ul.nav {
         border: 0;
         padding: 0;
         outline: none;
+
         .icon {
             position: absolute;
             margin-left: 10px;
@@ -218,6 +244,7 @@ ul.nav {
             width: 2px;
             height: 16px;
             background-color: currentColor;
+
             &::before {
                 content: '';
                 position: absolute;
@@ -233,10 +260,12 @@ ul.nav {
         }
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .footer {
         padding-bottom: 1em;
         padding-left: 1em;
+
         .scroll-top {
             .icon {
                 margin-top: -1em;
@@ -253,15 +282,18 @@ ul.nav {
     background: url(../images/logo.png) 0 0 no-repeat;
     margin: 2em auto;
     background-size: contain;
+
     &:hover {
         animation-name: shake;
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .logo {
         width: 3em;
         height: 3em;
         margin: 0;
+
         &:hover {
             animation-name: none;
         }
@@ -269,10 +301,12 @@ ul.nav {
 }
 
 @keyframes shake {
+
     0%,
     100% {
         transform: translateX(0);
     }
+
     10%,
     30%,
     50%,
@@ -280,6 +314,7 @@ ul.nav {
     90% {
         transform: translateX(-10px);
     }
+
     20%,
     40%,
     60%,
@@ -287,9 +322,11 @@ ul.nav {
         transform: translateX(10px);
     }
 }
+
 .animated {
     animation-fill-mode: both;
     animation-duration: 1s;
+
     &.hinge {
         animation-duration: 1s;
     }
@@ -300,14 +337,17 @@ a {
     color: $accent-color;
     text-decoration: none;
     transition: color 0.2s;
+
     &:hover,
     &:focus,
     &:active {
         color: lighten($accent-color, 10%);
         text-decoration: underline;
     }
+
     &:visited {
         color: $accent-color;
+
         &:hover,
         &:focus,
         &:active {
@@ -316,6 +356,7 @@ a {
         }
     }
 }
+
 .annotation {
     display: block;
     margin-bottom: 2em;
@@ -323,9 +364,11 @@ a {
     border-radius: 2px;
     transition: all 0.3s;
     box-sizing: border-box;
+
     h2 {
         margin-bottom: 0.5em;
     }
+
     .description-img {
         display: block;
         float: right;
@@ -333,21 +376,25 @@ a {
         margin-bottom: 1em;
         max-height: 160px;
     }
+
     p {
         text-indent: 1em;
         text-align: justify;
     }
+
     .info {
         display: block;
         color: darken($divide-color, 20%);
         float: right;
     }
 }
+
 @media screen and (max-width: $mobile-screen) {
     .annotation {
-        & > a {
+        &>a {
             display: block;
         }
+
         .description-img {
             display: block;
             margin-bottom: 1em;
@@ -357,6 +404,7 @@ a {
         }
     }
 }
+
 .img-thumbnail {
     padding: 4px;
     line-height: 1.428571429;
@@ -374,9 +422,11 @@ a {
     max-width: 100%;
     height: auto;
 }
+
 .pagination {
     color: darken($divide-color, 20%);
     font-size: 0.9em;
+
     .arrow {
         display: inline-block;
         height: 20px;
@@ -385,10 +435,12 @@ a {
         border-radius: 3px;
         position: relative;
         vertical-align: bottom;
+
         &:hover {
             background-color: transparentize($divide-color, 0.9);
         }
     }
+
     .next {
         color: $accent-color;
         position: absolute;
@@ -416,6 +468,7 @@ a {
             transform: rotate(45deg);
         }
     }
+
     .previous {
         color: $accent-color;
         position: absolute;
@@ -444,8 +497,10 @@ a {
         }
     }
 }
+
 .post-content {
     position: relative;
+
     &::before {
         content: '';
         position: absolute;
@@ -456,29 +511,26 @@ a {
         opacity: 0.9;
         margin-left: -1.8em;
         background: lighten($accent-color, 10%);
-        background: -moz-linear-gradient(
-            top,
-            lighten($accent-color, 10%) 0%,
-            $extra-color 100%
-        );
-        background: -webkit-linear-gradient(
-            top,
-            lighten($accent-color, 10%) 0%,
-            $extra-color 100%
-        );
-        background: linear-gradient(
-            to bottom,
-            lighten($accent-color, 10%) 0%,
-            $extra-color 100%
-        );
+        background: -moz-linear-gradient(top,
+                lighten($accent-color, 10%) 0%,
+                $extra-color 100%);
+        background: -webkit-linear-gradient(top,
+                lighten($accent-color, 10%) 0%,
+                $extra-color 100%);
+        background: linear-gradient(to bottom,
+                lighten($accent-color, 10%) 0%,
+                $extra-color 100%);
     }
 }
+
 .post-comments {
     margin-top: 2em;
 }
+
 @media screen and (max-width: $mobile-screen) {
     .tweet-panel {
         display: none;
     }
 }
+
 @import url(./syntax.css);
