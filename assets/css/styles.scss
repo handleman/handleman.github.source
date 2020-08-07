@@ -153,6 +153,9 @@ ul.nav {
         height: auto;
         margin-bottom: 2em;
     }
+    li{
+        margin-bottom: 1em;
+    }
 }
 
 @media screen and (max-width: $mobile-screen) {
