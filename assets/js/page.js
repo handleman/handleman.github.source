@@ -8,25 +8,58 @@
 	}
 
 	const visit_webhook = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/handleman_github_io-ybwyw/service/log_visit/incoming_webhook/visit';
+	const visits_webhook = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/handleman_github_io-ybwyw/service/log_visit/incoming_webhook/get_visits'
 	const geo_lookup = 'https://json.geoiplookup.io/';
 
-	const approveVisit = (userData) => {
-		const pathnameParts = window.location.pathname.split('/');
-		const articlePart = pathnameParts[pathnameParts.length - 1];
+	const pathnameParts = window.location.pathname.split('/');
+	const articlePart = pathnameParts[pathnameParts.length - 1];
 
-		const article = (articlePart !== '') ? articlePart.slice(0, -5) : '/';
-		const date = new Date().toUTCString();
-		console.log('article is', article);
+	const article = (articlePart !== '') ? articlePart.slice(0, -5) : '/';
 
-		fetch(`${visit_webhook}?article=${article}&ip=${userData.ip}&country_name=${userData.country_name}&date=${date}`)
+	const state = {
+		article
+	};
+
+	const controller = {
+
+		approveVisit: (userData, article) => {
+
+			const date = new Date().toUTCString();
+			console.log('article is', article);
+
+			fetch(`${visit_webhook}?article=${article}&ip=${userData.ip}&country_name=${userData.country_name}&date=${date}`)
+				.then((res) => {
+					res.ok ? console.log('visit approved') : console.error('visit couldn be accepted!');
+				});
+		},
+
+		getVisits: (article) => fetch(`${visits_webhook}?article=${article}`)
+			.then(response => response.json())
 			.then((res) => {
-				res.ok ? console.log('visit approved') : console.error('visit couldn be accepted!');
-			});
-	}
+				return res.visits.$numberInt;
+			})
+
+	};
+
+	const view = {
+
+		viewsSelectorID: 'views-number',
+		updateViews: (viewsNumber) => {
+			const id = view.viewsSelectorID;
+			const el = document.getElementById(id);
+			if (el) {
+				el.textContent = viewsNumber;
+			}
+		}
+	};
+
+	controller.getVisits(state.article)
+		.then(data => view.updateViews(data));
 
 	setTimeout(() => {
 		fetch(geo_lookup)
 			.then(response => response.json())
-			.then(approveVisit);
+			.then(userData => controller.approveVisit(userData, state.article));
 	}, 5000);
+
 })(window);

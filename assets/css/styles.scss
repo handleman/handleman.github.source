@@ -523,6 +523,13 @@ a {
     }
 }
 
+.post-info {
+    .icon {
+        max-height: fit-content;
+        vertical-align: middle;
+    }
+}
+
 .post-comments {
     margin-top: 2em;
 }

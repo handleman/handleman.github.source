@@ -9,7 +9,10 @@ aside: true
     <section class="post-content">
         {{content}}
     </section>
-    <section class="post-info text-muted"><small><strong>Опубликовано : {{ page.date | date_to_string }}</strong> </small></section>
+    <section class="post-info text-muted">
+        <small><img alt="календарь" caption="Дата публикации" src="/assets/event-24px.svg" class="icon" /> : <strong>{{ page.date | date_to_string }}</strong> || </small>
+        <small><img alt="глаз" caption="Количество просмотров страницы" src="/assets/visibility-24px.svg" class="icon" /> : <span id="views-number">...</span></small>
+    </section>
 </article>
 <hr />
 {% include comments.html %}
