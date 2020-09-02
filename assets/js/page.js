@@ -16,8 +16,12 @@
 
 	const article = (articlePart !== '') ? articlePart.slice(0, -5) : '/';
 
+	const excludedHosts = new Set(['127.0.0.1', 'localhost']);
+	const hostname = window.location.hostname;
+
 	const state = {
-		article
+		article,
+		hostname
 	};
 
 	const controller = {
@@ -53,13 +57,17 @@
 		}
 	};
 
-	controller.getVisits(state.article)
-		.then(data => view.updateViews(data));
+	if (!excludedHosts.has(state.hostname)) {
 
-	setTimeout(() => {
-		fetch(geo_lookup)
-			.then(response => response.json())
-			.then(userData => controller.approveVisit(userData, state.article));
-	}, 5000);
+		controller.getVisits(state.article)
+			.then(data => view.updateViews(data));
+
+		setTimeout(() => {
+			fetch(geo_lookup)
+				.then(response => response.json())
+				.then(userData => controller.approveVisit(userData, state.article));
+		}, 5000);
+	}
+
 
 })(window);
