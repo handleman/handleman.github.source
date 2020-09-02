@@ -57,10 +57,11 @@
 		}
 	};
 
+	controller.getVisits(state.article)
+		.then(data => view.updateViews(data));
+
 	if (!excludedHosts.has(state.hostname)) {
 
-		controller.getVisits(state.article)
-			.then(data => view.updateViews(data));
 
 		setTimeout(() => {
 			fetch(geo_lookup)
