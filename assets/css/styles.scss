@@ -249,9 +249,8 @@ ul.nav {
 
         .icon {
             position: absolute;
-            margin-left: 10px;
             margin-top: 3px;
-            width: 2px;
+            width: 4px;
             height: 16px;
             background-color: currentColor;
 
@@ -262,8 +261,8 @@ ul.nav {
                 top: 1px;
                 width: 10px;
                 height: 10px;
-                border-top: solid 2px currentColor;
-                border-right: solid 2px currentColor;
+                border-top: solid 4px currentColor;
+                border-right: solid 4px currentColor;
                 -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
             }
@@ -451,9 +450,6 @@ a {
         position: relative;
         vertical-align: bottom;
 
-        &:hover {
-            background-color: transparentize($divide-color, 0.9);
-        }
     }
 
     .next {
@@ -464,7 +460,7 @@ a {
         margin-left: 0.8em;
         margin-top: 13px;
         width: 26px;
-        height: 1px;
+        height: 4px;
         background-color: currentColor;
         text-indent: -9999px;
         @extend .link-like;
@@ -477,8 +473,8 @@ a {
             top: -5px;
             width: 10px;
             height: 10px;
-            border-top: solid 1px currentColor;
-            border-right: solid 1px currentColor;
+            border-top: solid 4px currentColor;
+            border-right: solid 4px currentColor;
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
         }
@@ -492,7 +488,7 @@ a {
         margin-left: 0.8em;
         margin-top: 13px;
         width: 26px;
-        height: 1px;
+        height: 4px;
         background-color: currentColor;
         text-indent: -9999px;
         @extend .link-like;
@@ -505,8 +501,8 @@ a {
             top: -5px;
             width: 10px;
             height: 10px;
-            border-top: solid 1px currentColor;
-            border-right: solid 1px currentColor;
+            border-top: solid 4px currentColor;
+            border-right: solid 4px currentColor;
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
