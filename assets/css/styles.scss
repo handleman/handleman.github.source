@@ -109,11 +109,18 @@ ul.nav {
     .panel {
         margin-top: 3em;
     }
+    .menuitem{
+        font-weight: bold;
+    }
 
     ul.nav {
         li {
             display: block;
             text-align: center;
+            font-weight: bold;
+            a{
+                text-decoration: none;
+            }
         }
 
         a {
