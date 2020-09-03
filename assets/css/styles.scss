@@ -34,9 +34,9 @@ body {
 hr {
     display: block;
     border: 0;
-    height: 2px;
-    background-color: $divide-color;
-    margin-top: 0.5em;
+    height: 3px;
+    background-color: $accent-color;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
@@ -171,6 +171,12 @@ ul.nav {
     box-sizing: border-box;
     max-width: 805px;
 
+    h1, h2{
+        color: $accent-color;
+    }
+    h3 {
+        color: $extra-color;
+    }
     img {
         display: inline-block;
         max-width: 100%;
