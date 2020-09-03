@@ -2,7 +2,7 @@
 ---
 
 $accent-color: #198bcd;
-$extra-color: #fdff89;
+$extra-color: #FF9E35;
 $divide-color: #bebebe;
 $font-color: #172a3b;
 $mobile-screen: 760px;
@@ -153,7 +153,8 @@ ul.nav {
         height: auto;
         margin-bottom: 2em;
     }
-    li{
+
+    li {
         margin-bottom: 1em;
     }
 }
@@ -342,20 +343,25 @@ a {
     transition: color 0.2s;
 
     &:hover,
-    &:focus,
-    &:active {
-        color: lighten($accent-color, 10%);
+    &:focus{
+        //color: lighten($accent-color, 10%);
+        color: $extra-color;
         text-decoration: underline;
+    }
+    &:active {
+        color: darken($extra-color, 10%);
     }
 
     &:visited {
         color: $accent-color;
 
         &:hover,
-        &:focus,
-        &:active {
-            color: lighten($accent-color, 10%);
+        &:focus{
+            color: $extra-color;
             text-decoration: underline;
+        }
+        &:active {
+            color: darken($extra-color, 10%);
         }
     }
 }
@@ -527,9 +533,28 @@ a {
 }
 
 .post-info {
-    .icon {
+    .item{
+        margin-right: 2em;
+    }
+    .icon,
+    svg {
         max-height: fit-content;
         vertical-align: middle;
+    }
+    .like-button{
+        transition: fill 0.3s;
+        &:not(.liked){
+            cursor: pointer;
+        }
+        &:hover{
+            fill: $accent-color;
+        }
+        &:active{
+            fill: darken($accent-color, 10%);
+        }
+        &.liked{
+            fill:$extra-color;
+        }
     }
 }
 
