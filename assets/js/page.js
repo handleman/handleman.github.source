@@ -1,7 +1,8 @@
 (function (global) {
 	'use strict';
-	//TODO: 1. change controller, view, state to Classes with construtor initialization.
-	//TODO: 2.  move constants to proper classes
+	// TODO: 1. change controller, view, state to Classes with construtor initialization.
+	// TODO: 2. move constants to proper classes
+	// TODO: 3. approve visit convert to PUT method 
 	const containerEl = document.getElementById('container');
 	containerEl.style.minHeight = `${window.innerHeight}px`;
 
@@ -88,10 +89,12 @@
 			const id = view.likesSelectorID;
 			const el = document.getElementById(id);
 			const activeClassName = view.likesActiveClassName;
-			el.onclick = () => {
-				if (el && !el.classList.contains(activeClassName)) {
-					callback()
-					view.likeButtonSetActive()
+			if (el) {
+				el.onclick = () => {
+					if (el && !el.classList.contains(activeClassName)) {
+						callback()
+						view.likeButtonSetActive()
+					}
 				}
 			}
 		},
