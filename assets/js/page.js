@@ -69,14 +69,21 @@
 			.then(response => response.json())
 			.then((res) => {
 				return res.visits.$numberInt;
-			})
+			}),
+
+		getLikes: (article) => fetch(`${get_likes_webhook}?article=${article}`)
+			.then(response => response.json())
+			.then((res) => {
+				return res.likes.$numberInt;
+			}),
 
 	};
 
 	const view = {
 
 		viewsSelectorID: 'views-number',
-		likesSelectorID: 'like-button',
+		likesSelectorID: 'likes-number',
+		likesButtonSelectorID: 'like-button',
 		likesActiveClassName: 'liked',
 		updateViews: (viewsNumber) => {
 			const id = view.viewsSelectorID;
@@ -85,8 +92,15 @@
 				el.textContent = viewsNumber;
 			}
 		},
-		likeButtonClickEvent: (callback) => {
+		updateLikes: (likesNumber) => {
 			const id = view.likesSelectorID;
+			const el = document.getElementById(id);
+			if (el) {
+				el.textContent = likesNumber;
+			}
+		},
+		likeButtonClickEvent: (callback) => {
+			const id = view.likesButtonSelectorID;
 			const el = document.getElementById(id);
 			const activeClassName = view.likesActiveClassName;
 			if (el) {
@@ -99,7 +113,7 @@
 			}
 		},
 		likeButtonSetActive() {
-			const id = view.likesSelectorID;
+			const id = view.likesButtonSelectorID;
 			const el = document.getElementById(id);
 			const activeClassName = view.likesActiveClassName;
 
@@ -111,6 +125,9 @@
 
 	controller.getVisits(state.article)
 		.then(data => view.updateViews(data));
+
+	controller.getLikes(state.article)
+		.then(data => view.updateLikes(data));
 
 	view.likeButtonClickEvent(() => controller.approveLike(state.article, state.userGeoData.ip, state.os));
 
