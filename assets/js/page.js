@@ -59,7 +59,7 @@
 				})
 			}
 
-			fetch(put_like_webhook, requestOptions)
+			return fetch(put_like_webhook, requestOptions)
 				.then((res) => {
 					res.ok ? console.log('like approved') : console.error('like couldnt be accepted!');
 				});
@@ -129,7 +129,12 @@
 	controller.getLikes(state.article)
 		.then(data => view.updateLikes(data));
 
-	view.likeButtonClickEvent(() => controller.approveLike(state.article, state.userGeoData.ip, state.os));
+	view.likeButtonClickEvent(() =>
+		controller.approveLike(state.article, state.userGeoData.ip, state.os)
+		.then(() => controller.getLikes(state.article)
+			.then(data => view.updateLikes(data))
+		)
+	);
 
 	if (!excludedHosts.has(state.hostname)) {
 
