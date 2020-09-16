@@ -12,7 +12,7 @@ categories: system
 В данном примере я все делал через bash shell, но, в целом — использовать можно все что угодно. Важен только принцип и конкретные файлы конфигов которые нужно будет подправить.
 
 
-## шаг 1 установка и настройка clamAV
+## Шаг 1. Установка и настройка clamAV
 
 Ставлю все через   `Brew`
 ```bash
@@ -67,7 +67,7 @@ $ echo "#\!/usr/bin/env bash \n/usr/local/bin/freshclam && /usr/local/bin/clamds
 С конфигурацией **clamAV** покончено, впереди самое интересное:
 
 
-## Щаг 2: Запуск сканера ClamAV по расписанию в MacOs
+## Шаг 2. Запуск сканера ClamAV по расписанию в MacOs
 
 Чтобы приступить, необходимо немного углубится в принципы работы процессов (демонов) в macOs.
 [Официаьная документация от Aplle](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)
