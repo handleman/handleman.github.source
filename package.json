@@ -19,7 +19,7 @@
     },
     "homepage": "https://github.com/handleman/handleman.github.source#readme",
     "devDependencies": {
-        "husky": "^4.2.1"
+        "husky": "^7.0.4"
     },
     "husky": {
         "hooks": {
